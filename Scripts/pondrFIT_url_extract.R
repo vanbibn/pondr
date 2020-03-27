@@ -8,7 +8,7 @@
 # Load Packages
 library(tidyverse)
 
-my_urls <- read_csv("./Data/pondrfit-url.csv")
+my_urls <- read_csv("./Data/pondrfit-url_Roy.csv")
 
 # create two empty columns for PONDR-FIT average and % disorder scores
 my_urls <-  my_urls %>% 
@@ -38,5 +38,5 @@ for (u in 1:length(my_urls$url)) {
 }
 
 
-write.csv(my_urls, file = paste0("Output/", Sys.Date(), "_Nathan", 
+write.csv(my_urls, file = paste0("Output/", Sys.Date(), "_Roy", 
                                  length(my_urls$url),"_pondrFIT-calc.csv"))
