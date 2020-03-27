@@ -15,7 +15,7 @@ files
 
 #### Loop through each file and do the following
 
-pondr <- readLines(paste0("Data/pondr_text_Nathan/", files[1]))
+pondr <- readLines(paste0("Data/pondr_text_Nathan/", files[14]))
 
 ## remove disorder segment lines:
 # 1. make logical vector for: if line contains "Predicted disorder segment"
@@ -47,11 +47,11 @@ for (p in preds) {
     myresult <- c(myresult, m)
 }
 
-dim(myresult) <- c(6,3)
-colnames(myresult) <- c("vlxt", "vl3", "vsl2")
-row.names(myresult) <- c(
+my_matrix <- matrix(myresult, byrow = TRUE, ncol = 6)
+row.names(my_matrix) <- c("vlxt", "vl3", "vsl2")
+colnames(my_matrix) <- c(
     "residues",      # Predicted residues (total number)
-    "dis_regions",   # Number Disordered Regions
+    "dis_rgns",   # Number Disordered Regions
     "dis_residues",  # Number residues disordered
     "longest",       # Longest Disordered Region
     "pct",           # Overall percent disordered
@@ -59,8 +59,13 @@ row.names(myresult) <- c(
 )
 
 myresult
+my_matrix
 
-df_result <- as.data.frame(t(myresult))
+df_result <- as.data.frame(my_matrix)
+df_result <- df_result %>% 
+    rownames_to_column(.data = .) %>% 
+    mutate(df_result, protein = paste0(sub(".txt", "", files[14])))
 df_result
+
 
 write.csv(df_result, file = "Output/Q3BBV0_pondr.csv")
