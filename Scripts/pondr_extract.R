@@ -47,21 +47,37 @@ for (p in preds) {
     myresult <- c(myresult, m)
 }
 
-my_matrix <- matrix(myresult, byrow = TRUE, ncol = 6)
-row.names(my_matrix) <- c("vlxt", "vl3", "vsl2")
-colnames(my_matrix) <- c(
-    "residues",      # Predicted residues (total number)
+## create column names
+predictors <- c("VLXT", "VL3", "VSL2")
+varbs <- c(
+    "resid",      # Predicted residues (total number)
     "dis_rgns",   # Number Disordered Regions
-    "dis_residues",  # Number residues disordered
-    "longest",       # Longest Disordered Region
-    "pct",           # Overall percent disordered
-    "avg"            # Average Prediction Score
+    "n_dis",      # Number residues disordered
+    "lg_rgn",     # Longest Disordered Region
+    "pct",        # Overall percent disordered
+    "avg"         # Average Prediction Score
 )
+# combine each value of predictors and varbs with "." between them
+varnames <- as.vector(outer(varbs, predictors, paste, sep = "."))
+
+my_matrix <- rbind(matrix(myresult, byrow = TRUE, ncol = 18))
+row.names(my_matrix) <- paste0(sub(".txt", "", files[14]))
+colnames(my_matrix) <- varnames
 
 myresult
 my_matrix
 
-df_result <- as.data.frame(my_matrix)
+# check if results matrix exists, if not make it, else add row to it
+if (!exists("results")) {
+    results <- my_matrix
+} else {
+    results <- rbind(results, my_matrix)
+}
+
+results
+### END loop
+
+df_result <- as.data.frame(results)
 df_result <- df_result %>% 
     rownames_to_column(.data = .) %>% 
     mutate(df_result, protein = paste0(sub(".txt", "", files[14])))
