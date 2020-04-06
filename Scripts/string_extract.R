@@ -47,7 +47,7 @@ for (f in seq_along(files)) {
     
     # combine into one matrix with one row per protein
     my_matrix <- cbind(m1,m2,m3)
-    row.names(my_matrix) <- paste0(sub("_string.xlsx", "", files[f]))
+    row.names(my_matrix) <- toupper(paste0(sub("_string.xlsx", "",  files[f])))
     colnames(my_matrix) <- varnames
     
     # compile all proteins into one matrix
@@ -62,5 +62,7 @@ for (f in seq_along(files)) {
 # End loop
 
 results
-# write data frame to csv
 
+# write results matrix to csv
+
+write.csv(results, file = "Output/String.csv")
