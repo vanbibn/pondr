@@ -6,7 +6,21 @@
 
 
 # Load packages
-library(tidyverse)
+# library(readr)  # added readr:: to the only function called from package.
+
+## create column names
+# make vectors for predictors and variables
+predictors <- c("VLXT", "VL3", "VSL2")
+varbs <- c(
+    "resid",      # Predicted residues (total number)
+    "dis_rgns",   # Number Disordered Regions
+    "n_dis",      # Number residues disordered
+    "lg_rgn",     # Longest Disordered Region
+    "pct",        # Overall percent disordered
+    "avg"         # Average Prediction Score
+)
+# combine each value of predictors and varbs with "." between them
+varnames <- as.vector(outer(varbs, predictors, paste, sep = "."))
 
 # create a vector of file names in listed directory
 files <- list.files("Data/pondr_text_Roy/")
@@ -43,23 +57,11 @@ for (f in 1:length(files)) {
     for (p in preds) {
         sl <- sub("\t", ";", p)
         z <- unlist(strsplit(sl, ";")) # srtsplit returns a list, but parse_number takes a vector
-        m <- parse_number(z)
+        m <- readr::parse_number(z)
         myresult <- c(myresult, m)
     }
     
-    ## create column names
-    predictors <- c("VLXT", "VL3", "VSL2")
-    varbs <- c(
-        "resid",      # Predicted residues (total number)
-        "dis_rgns",   # Number Disordered Regions
-        "n_dis",      # Number residues disordered
-        "lg_rgn",     # Longest Disordered Region
-        "pct",        # Overall percent disordered
-        "avg"         # Average Prediction Score
-    )
-    # combine each value of predictors and varbs with "." between them
-    varnames <- as.vector(outer(varbs, predictors, paste, sep = "."))
-    
+    # convert myresults vector into a matrix
     my_matrix <- rbind(matrix(myresult, byrow = TRUE, ncol = 18))
     row.names(my_matrix) <- paste0(sub(".txt", "", files[f]))
     colnames(my_matrix) <- varnames
