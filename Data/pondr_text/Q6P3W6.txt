@@ -1,0 +1,38 @@
+================================VLXT NNP STATISTICS================================
+Predicted residues: 841			Number Disordered Regions: 14
+Number residues disordered: 572		Longest Disordered Region: 119
+Overall percent disordered: 68.01	Average Prediction Score: 0.5946
+Predicted disorder segment [1]-[30]	Average Strength= 0.7209
+Predicted disorder segment [73]-[83]	Average Strength= 0.6582
+Predicted disorder segment [94]-[212]	Average Strength= 0.7702
+Predicted disorder segment [227]-[290]	Average Strength= 0.7715
+Predicted disorder segment [339]-[354]	Average Strength= 0.7342
+Predicted disorder segment [365]-[475]	Average Strength= 0.7659
+Predicted disorder segment [477]-[487]	Average Strength= 0.5387
+Predicted disorder segment [501]-[570]	Average Strength= 0.8004
+Predicted disorder segment [577]-[577]	Average Strength= 0.5204
+Predicted disorder segment [601]-[637]	Average Strength= 0.7841
+Predicted disorder segment [672]-[712]	Average Strength= 0.7813
+Predicted disorder segment [723]-[727]	Average Strength= 0.5460
+Predicted disorder segment [750]-[789]	Average Strength= 0.7774
+Predicted disorder segment [826]-[841]	Average Strength= 0.9061
+================================VL3 NNP STATISTICS================================
+Predicted residues: 841			Number Disordered Regions: 4
+Number residues disordered: 750		Longest Disordered Region: 252
+Overall percent disordered: 89.18	Average Prediction Score: 0.7503
+Predicted disorder segment [1]-[24]	Average Strength= 0.5580
+Predicted disorder segment [72]-[309]	Average Strength= 0.7761
+Predicted disorder segment [329]-[580]	Average Strength= 0.7964
+Predicted disorder segment [606]-[841]	Average Strength= 0.8249
+================================VSL2 NNP STATISTICS================================
+Predicted residues: 841			Number Disordered Regions: 8
+Number residues disordered: 749		Longest Disordered Region: 266
+Overall percent disordered: 89.06	Average Prediction Score: 0.7531
+Predicted disorder segment [1]-[15]	Average Strength= 0.6218
+Predicted disorder segment [24]-[35]	Average Strength= 0.5627
+Predicted disorder segment [57]-[64]	Average Strength= 0.5180
+Predicted disorder segment [66]-[66]	Average Strength= 0.5093
+Predicted disorder segment [73]-[308]	Average Strength= 0.8069
+Predicted disorder segment [322]-[587]	Average Strength= 0.8323
+Predicted disorder segment [605]-[646]	Average Strength= 0.7002
+Predicted disorder segment [673]-[841]	Average Strength= 0.7969
