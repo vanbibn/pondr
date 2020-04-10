@@ -1,0 +1,23 @@
+================================VLXT NNP STATISTICS================================
+Predicted residues: 607			Number Disordered Regions: 11
+Number residues disordered: 451		Longest Disordered Region: 206
+Overall percent disordered: 74.30	Average Prediction Score: 0.6678
+Predicted disorder segment [1]-[54]	Average Strength= 0.8468
+Predicted disorder segment [62]-[91]	Average Strength= 0.7011
+Predicted disorder segment [95]-[95]	Average Strength= 0.5089
+Predicted disorder segment [118]-[136]	Average Strength= 0.6821
+Predicted disorder segment [159]-[179]	Average Strength= 0.6967
+Predicted disorder segment [191]-[224]	Average Strength= 0.8145
+Predicted disorder segment [233]-[438]	Average Strength= 0.8457
+Predicted disorder segment [455]-[458]	Average Strength= 0.5888
+Predicted disorder segment [486]-[507]	Average Strength= 0.7587
+Predicted disorder segment [526]-[578]	Average Strength= 0.8201
+Predicted disorder segment [601]-[607]	Average Strength= 0.8610
+================================VSL2 NNP STATISTICS================================
+Predicted residues: 607			Number Disordered Regions: 4
+Number residues disordered: 571		Longest Disordered Region: 295
+Overall percent disordered: 94.07	Average Prediction Score: 0.8188
+Predicted disorder segment [1]-[149]	Average Strength= 0.8455
+Predicted disorder segment [157]-[451]	Average Strength= 0.8971
+Predicted disorder segment [462]-[585]	Average Strength= 0.7451
+Predicted disorder segment [605]-[607]	Average Strength= 0.6346
