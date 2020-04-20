@@ -36,9 +36,9 @@ files <- list.files(direct)
 for (f in seq_along(files)) {
     
     # read data from sheet1-3
-    sheet1 <- read_xlsx(paste0(direct, files[f]), sheet = "Sheet1", col_names = "mix")
-    sheet2 <- read_xlsx(paste0(direct, files[f]), sheet = "Sheet2", col_names = "mix")
-    sheet3 <- read_xlsx(paste0(direct, files[f]), sheet = "Sheet3", col_names = "mix")
+    sheet1 <- readxl::read_xlsx(paste0(direct, files[f]), sheet = "Sheet1", col_names = "mix")
+    sheet2 <- readxl::read_xlsx(paste0(direct, files[f]), sheet = "Sheet2", col_names = "mix")
+    sheet3 <- readxl::read_xlsx(paste0(direct, files[f]), sheet = "Sheet3", col_names = "mix")
     
     # extract data for columns from even cells of each sheet
     m1 <- matrix(as.numeric(sheet1$mix[evens]), nrow = 1, ncol = 6, byrow = TRUE)
@@ -61,8 +61,9 @@ for (f in seq_along(files)) {
 }
 # End loop
 
-results
-
 # write results matrix to csv
 
 write.csv(results, file = "Output/String.csv")
+
+# end with the final results matrix so it will be what is returned by function
+results
