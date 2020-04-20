@@ -12,7 +12,7 @@ my_urls <- read_csv("./Data/pondrfit-url_Roy.csv")
 
 # create two empty columns for PONDR-FIT average and % disorder scores
 my_urls <-  my_urls %>% 
-    mutate(meanDisorder = NA, percentDisorder = NA, length = NA)
+    dplyr::mutate(meanDisorder = NA, percentDisorder = NA, length = NA)
 
 
 
@@ -21,7 +21,7 @@ my_urls <-  my_urls %>%
 for (u in 1:length(my_urls$url)) {
     # read data from temporary url for PONDR-FIT data
     # start reading from line 2 (skip first line)
-    fit1 <- read_table2(my_urls$url[u], col_names = FALSE, skip = 1)
+    fit1 <- readr::read_table2(my_urls$url[u], col_names = FALSE, skip = 1)
     
     # add column names and write out to text file
     colnames(fit1) <- c("position", "residue", "score", "error")
